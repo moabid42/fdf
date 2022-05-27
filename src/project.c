@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:08:33 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 16:40:40 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:34:51 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	rotate_x(int *y, int *z, double alpha)
 {
-	int previous_y;
+	int	previous_y;
 
 	previous_y = *y;
 	*y = previous_y * cos(alpha) + *z * sin(alpha);
@@ -25,7 +25,7 @@ static void	rotate_x(int *y, int *z, double alpha)
 
 static void	rotate_y(int *x, int *z, double beta)
 {
-	int previous_x;
+	int	previous_x;
 
 	previous_x = *x;
 	*x = previous_x * cos(beta) + *z * sin(beta);
@@ -34,8 +34,8 @@ static void	rotate_y(int *x, int *z, double beta)
 
 void	iso(int *x, int *y, int z)
 {
-	int previous_x;
-	int previous_y;
+	int	previous_x;
+	int	previous_y;
 
 	previous_x = *x;
 	previous_y = *y;
@@ -43,7 +43,7 @@ void	iso(int *x, int *y, int z)
 	*y = -z + (previous_x + previous_y) * sin(0.599);
 }
 
-t_point		project(t_point p, t_fdf *fdf)
+t_point	project(t_point p, t_fdf *fdf)
 {
 	p.x *= fdf->camera->zoom;
 	p.y *= fdf->camera->zoom;
@@ -55,7 +55,6 @@ t_point		project(t_point p, t_fdf *fdf)
 	if (fdf->camera->projection == threeD)
 		iso(&p.x, &p.y, p.z);
 	p.x += WIDTH / 2 + fdf->camera->x_offset;
-	p.y += (HEIGHT ) / 2
-					+ fdf->camera->y_offset;
+	p.y += HEIGHT / 2 + fdf->camera->y_offset;
 	return (p);
 }

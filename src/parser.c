@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:21:30 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 16:46:01 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:33:29 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,25 @@ t_coord_val	*new_coord(char *s)
 	t_coord_val	*coord;
 	char		**parts;
 
-	if (!(coord = (t_coord_val *)ft_malloc(sizeof(t_coord_val))))
+	coord = (t_coord_val *)ft_malloc(sizeof(t_coord_val));
+	if (!coord)
 		error(MAP_READING);
-	if (!(parts = ft_split(s, ',')))
+	parts = ft_split(s, ',');
+	if (!parts)
 		error(MAP_READING);
 	if (!ft_isnumber(parts[0], 10))
 		error(MAP_READING);
 	if (parts[1] && !ft_isnumber(parts[1], 16))
 		error(MAP_READING);
 	coord->z = ft_atoi(parts[0]);
-	coord->color = (parts[1] ? ft_atoi_base(parts[1], 16) : -1);
+	if (parts[1])
+		coord->color = ft_atoi_base(parts[1], 16);
+	else
+		coord->color = -1;
 	coord->next = NULL;
 	free_split_arr(parts);
 	return (coord);
 }
-
 
 void	push_line(char **coords_line, t_coord_val **stack, t_map *map)
 {

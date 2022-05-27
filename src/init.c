@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:22:43 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 17:44:45 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:29:17 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,11 @@ t_camera	*camera_init(t_fdf *fdf)
 {
 	t_camera	*camera;
 
-	if (!(camera = (t_camera *)ft_malloc(sizeof(t_camera))))
+	camera = (t_camera *)ft_malloc(sizeof(t_camera));
+	if (!camera)
 		error(CAMERA_INIT);
 	camera->zoom = ft_min(WIDTH / fdf->map->width / 2,
-						HEIGHT / fdf->map->height / 2);
+			HEIGHT / fdf->map->height / 2);
 	camera->alpha = 0;
 	camera->beta = 0;
 	camera->gamma = 0;
@@ -60,22 +61,27 @@ t_camera	*camera_init(t_fdf *fdf)
 	return (camera);
 }
 
-t_fdf		*fdf_init(t_map *map)
+t_fdf	*fdf_init(t_map *map)
 {
 	t_fdf	*fdf;
 
-	if (!(fdf = (t_fdf *)ft_malloc(sizeof(t_fdf))))
+	fdf = (t_fdf *)ft_malloc(sizeof(t_fdf));
+	if (!fdf)
 		error(FDF_INIT);
-	if (!(fdf->mlx = mlx_init()))
+	fdf->mlx = mlx_init();
+	if (!fdf)
 		error(FDF_INIT);
-	if (!(fdf->win = mlx_new_window(fdf->mlx, WIDTH, HEIGHT, "FdF")))
+	fdf->win = mlx_new_window(fdf->mlx, WIDTH, HEIGHT, "FdF");
+	if (!fdf)
 		error(FDF_INIT);
-	if (!(fdf->img = mlx_new_image(fdf->mlx, WIDTH, HEIGHT)))
+	fdf->img = mlx_new_image(fdf->mlx, WIDTH, HEIGHT);
+	if (!fdf)
 		error(FDF_INIT);
 	fdf->data_addr = mlx_get_data_addr(fdf->img, &(fdf->bits_per_pixel),
-										&(fdf->size_line), &(fdf->endian));
+			&(fdf->size_line), &(fdf->endian));
 	fdf->map = map;
-	if (!(fdf->mouse = (t_mouse *)ft_malloc(sizeof(t_mouse))))
+	fdf->mouse = (t_mouse *)ft_malloc(sizeof(t_mouse));
+	if (!fdf)
 		error(FDF_INIT);
 	return (fdf);
 }

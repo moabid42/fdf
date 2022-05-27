@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:43:12 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 17:11:08 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:47:57 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	error(char *s)
 
 void	*ft_malloc(size_t size)
 {
-	void *ptr;
+	void	*ptr;
 
 	ptr = malloc(size);
 	if (ptr)
@@ -48,7 +48,7 @@ void	ft_strdel(char **as)
 
 void	free_split_arr(char **arr)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (arr[i])
@@ -56,7 +56,7 @@ void	free_split_arr(char **arr)
 	free(arr);
 }
 
-int		ft_close(void *param)
+int	ft_close(void *param)
 {
 	(void)param;
 	exit(0);

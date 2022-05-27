@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:58:07 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 16:40:13 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:29:42 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	rotate(int key, t_fdf *fdf)
 void	zoom(int key, t_fdf *fdf)
 {
 	if (key == NUM_PAD_PLUS)
-		fdf->camera->zoom+=ZOOM;
+		fdf->camera->zoom += ZOOM;
 	else if (key == NUM_PAD_MINUS)
-		fdf->camera->zoom-=ZOOM;
+		fdf->camera->zoom -= ZOOM;
 	if (fdf->camera->zoom < 1)
 		fdf->camera->zoom = 1;
 	drawer(fdf->map, fdf);

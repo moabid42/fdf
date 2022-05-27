@@ -6,14 +6,14 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 19:57:27 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 17:24:43 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:45:07 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 
-static int		ft_isdigit_base(char c, int base)
+static int	ft_isdigit_base(char c, int base)
 {
 	const char	*digits = "0123456789ABCDEF";
 	int			i;
@@ -46,16 +46,16 @@ static int	ft_has_prefix(const char *str, int base)
 	}
 	return (0);
 }
+
 void	new_line_remove(char *line)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	while(line[i] != '\n')
+	while (line[i] != '\n')
 		i++;
 	line[i] = '\0';
 }
-
 
 int	ft_isnumber(char *str, int base)
 {
@@ -79,7 +79,9 @@ int	ft_isnumber(char *str, int base)
 		i++;
 		digits++;
 	}
-	return ((!str[i] && digits) ? 1 : 0);
+	if (!str[i] && digits)
+		return (1);
+	return (0);
 }
 
 int	ft_atoi_base(const char *str, int base)
@@ -100,7 +102,12 @@ int	ft_atoi_base(const char *str, int base)
 	else if (base == 8)
 		i++;
 	else if (base == 10 && (str[i] == '-' || str[i] == '+'))
-		sign = (str[i++] == '-') ? -1 : 1;
+	{
+		if (str[i++] == '-')
+			sign = -1;
+		else
+			sign = 1;
+	}
 	while (ft_isdigit_base(str[i], base) >= 0)
 		result = result * base + ft_isdigit_base(str[i++], base);
 	return ((int)(result * sign));

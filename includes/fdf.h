@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 19:50:27 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 19:32:08 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:46:26 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,6 +195,8 @@ void			free_split_arr(char **arr);
 int				ft_close(void *param);
 int				ft_min(int a, int b);
 int				ft_max(int a, int b);
-int				signOf(int a, int b);
+int				sign_of(int a, int b);
+t_point			ft_delta(t_point *f, t_point *s);
+t_point			ft_sign(t_point *f, t_point *s);
 
 #endif
