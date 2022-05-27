@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:20:28 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 19:38:04 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/27 22:07:24 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int ft_max(int a, int b)
 int	signOf(int a, int b)
 {
 	if (a < b)
-		return (-1);
-	else
 		return (1);
+	else
+		return (-1);
 }
-

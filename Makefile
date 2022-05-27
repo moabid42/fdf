@@ -6,7 +6,7 @@
 #    By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 16:18:45 by moabid            #+#    #+#              #
-#    Updated: 2022/05/27 17:34:17 by moabid           ###   ########.fr        #
+#    Updated: 2022/05/27 22:04:33 by moabid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS_DIR	=	./src/
 SRCS_FILES	=	main.c drawer.c init.c \
 					parser.c colors.c keys.c \
 					keys_setup.c project.c stack.c \
-					utils.c utils2.c
+					utils.c utils2.c utils3.c
 SRCS		= 	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
 
