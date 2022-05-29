@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:22:43 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 22:29:17 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/29 19:45:19 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,5 @@ t_fdf	*fdf_init(t_map *map)
 	fdf->data_addr = mlx_get_data_addr(fdf->img, &(fdf->bits_per_pixel),
 			&(fdf->size_line), &(fdf->endian));
 	fdf->map = map;
-	fdf->mouse = (t_mouse *)ft_malloc(sizeof(t_mouse));
-	if (!fdf)
-		error(FDF_INIT);
 	return (fdf);
 }

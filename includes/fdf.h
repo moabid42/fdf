@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 19:50:27 by moabid            #+#    #+#             */
-/*   Updated: 2022/05/27 22:46:26 by moabid           ###   ########.fr       */
+/*   Updated: 2022/05/29 19:44:29 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,6 @@ typedef struct s_map
 	int					z_range;
 }						t_map;
 
-typedef struct s_mouse
-{
-	char				is_pressed;
-	int					x;
-	int					y;
-	int					previous_x;
-	int					previous_y;
-}						t_mouse;
-
 typedef struct s_fdf
 {
 	void				*mlx;
@@ -114,7 +105,6 @@ typedef struct s_fdf
 	int					endian;
 	t_camera			*camera;
 	t_map				*map;
-	t_mouse				*mouse;
 }						t_fdf;
 
 ///////////////////////
