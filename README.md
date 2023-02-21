@@ -11,10 +11,8 @@ The result is a very basic graphic engine that runs on the CPU, written in C.
 
 ## Main features
 
-- Plane-like first person camera to fly around the map, controllable with a game controller or a keyboard.
+- Plane-like first person camera to fly around the map, controllable with a keyboard (Beast don't need a mouse).
 - Maps (larger than 400x400 vertices) are virtually infinite, being duplicated on every side.
-- Audio files can be read by the program and affect the look of the map in different ways, depending on amplitudes of given frequencies.
-- Stars
 
 ![](https://thumbs.gfycat.com/FlusteredVastDeer-size_restricted.gif)
 
