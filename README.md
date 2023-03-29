@@ -20,5 +20,4 @@ The result is a very basic graphic engine that runs on the CPU, written in C.
 
 - Better understanding of the C programming language and how to structure the code to keep a growing program maintanable, and open to new features.
 - Vectors and matrices related algebra, to be able to create the pipeline which transforms textual coordinates into a human-readable landscape on the screen. Bresenham's algorithm is applied to draw lines, resulting in a wireframe look.
-- How to handle sound with FMOD, and how to smooth up the raw data from the FFT to obtain fluid effects.
-- Handle input from a game controller with SDL2 and map analog joysticks to rotations and movement.
+- Binary to frames, how does it happen in the background.
